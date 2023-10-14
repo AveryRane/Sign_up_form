@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sign Up Form!</title>
+		<link rel="stylesheet" href="./public/styles.css" />
+		<script src="./script.js" defer></script>
+	</head>
+	<body>
+		<div id="hero">
+			<img src="./public/images/odin-lined.png" alt="Odin Logo" id="logo" />
+		</div>
+
+		<form action="post" id="form">
+			<section id="header">
+				<h2>
+					This is only exercise material and is not a real survey or a
+					legitament page for account creation.
+				</h2>
+			</section>
+			<section id="contactInfo">
+				<label for="fName">First</label>
+				<input
+					type="text"
+					name="fName"
+					id="fName"
+					required
+					placeholder="John"
+					class="textArea"
+				/>
+
+				<label for="lName">Last</label>
+				<input
+					type="text"
+					name="lName"
+					id="lName"
+					required
+					placeholder="Doe"
+					class="textArea"
+				/>
+
+				<label for="phoneNumber">Phone Number</label>
+				<input
+					type="text"
+					name="phoneNumber"
+					id="phoneNumber"
+					class="textArea"
+				/>
+			</section>
+
+			<section id="loginInfo">
+				<label for="email">Email</label>
+				<input
+					type="email"
+					name="email"
+					id="email"
+					placeholder="john.doe@email.com"
+					class="textArea"
+				/>
+
+				<label for="password">Password</label>
+				<input type="password" name="password" id="password" />
+
+				<label for="passwordConfirm">Confirm Password</label>
+				<input
+					type="password"
+					name="passwordConfirm"
+					id="passwordConfirm"
+					class="textArea"
+				/>
+			</section>
+			<section id="footer">
+				<input type="submit" value="Create Account" class="btn" />
+				<p>
+					Already have an account?
+					<a href="https://www.theodinproject.com/">Sign in</a>
+				</p>
+			</section>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,89 @@
+:root {
+	--shadow: 0px 10px 77px -3px rgba(0, 0, 0, 0.1);
+	--pad: 0.5rem;
+}
+
+body {
+	display: grid;
+	grid-template-columns: [pgStrt] 5% [heroStrt] 40% [heroEnd] 5% [formStrt] 40% [formEnd] 5% [pgEnd];
+	grid-template-rows: [pgStrt] 5% [contentStrt] 90% [contentEnd] 5% [pgEnd];
+	background-color: rgb(250, 250, 246);
+	min-height: 100vh;
+	min-width: 1000px;
+}
+#hero {
+	grid-area: contentStrt / heroStrt / contentEnd / heroEnd;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	background: url(./images/deer.jpg) no-repeat;
+	background-size: cover;
+	background-color: rgb(177, 177, 131);
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow);
+	padding: 0.5rem;
+	min-width: 400px;
+	min-height: 600px;
+}
+
+#logo {
+	width: 10rem;
+	height: 10rem;
+	background-color: black;
+}
+
+form {
+	grid-area: contentStrt / formStrt / contentEnd / formEnd;
+	display: grid;
+	grid-template-rows: [formTop] 20% [inputAreaStart] 70% [inputAreaEnd] 10% [formBottom];
+	grid-template-columns: [formLeft] 50% [formCenter] 50% [formRight];
+	border-radius: 0.5rem;
+	min-width: 400px;
+	min-height: 600px;
+	box-shadow: var(--shadow);
+	background: url(./images/odin-lined.png) no-repeat;
+	background-color: rgb(226, 248, 206);
+	background-size: 15rem 15rem;
+	background-position: bottom 5rem center;
+}
+#header {
+	padding: var(--pad);
+	grid-area: formTop / formLeft / inputAreaStart / formRight;
+}
+#contactInfo {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: flex-start;
+	gap: 0.5rem;
+	padding: var(--pad);
+	grid-area: inputAreaStart / formLeft / inputAreaEnd / formCenter;
+}
+
+#loginInfo {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: flex-start;
+	gap: 0.5rem;
+	padding: var(--pad);
+	grid-area: inputAreaStart / formCenter / inputAreaEnd / formRight;
+}
+
+#footer {
+	padding: var(--pad);
+	grid-area: inputAreaEnd / formLeft / formBottom / formRight;
+}
+
+/* @media (max-width: 1000px) {
+	body {
+		grid-template-columns: [pgStrt] 5% [contentStrt] 90% [contentEnd] 5% [pgStrt];
+		grid-template-rows: [pgStrt] 5% [heroStrt] 40% [heroEnd] 5% [formStrt] 40% [formEnd] 5% [pgEnd];
+	}
+	#hero {
+		grid-area: heroStrt / contentStrt / heroEnd / contentEnd;
+		height: auto;
+	}
+	form {
+		grid-area: formStrt / contentStrt / formEnd / contentEnd;
+		height: auto;
+	}
+} */
