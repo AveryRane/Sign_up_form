@@ -9,11 +9,7 @@
 		<script src="./script.js" defer></script>
 	</head>
 	<body>
-		<div id="hero">
-			<img src="./public/images/odin-lined.png" alt="Odin Logo" id="logo" />
-		</div>
-
-		<form action="post" id="form">
+		<form id="form">
 			<section id="header">
 				<h2>
 					This is only exercise material and is not a real survey or a
@@ -41,41 +37,71 @@
 					class="textArea"
 				/>
 
-				<label for="phoneNumber">Phone Number</label>
+				<label for="phoneNumber">Phone</label>
 				<input
-					type="text"
+					type="tel"
 					name="phoneNumber"
 					id="phoneNumber"
 					class="textArea"
+					placeholder="(111) 222-3333"
 				/>
 			</section>
 
 			<section id="loginInfo">
 				<label for="email">Email</label>
 				<input
+					required
+					pattern="[^@s]+@[^@s]+.[^@s]+"
+					title="Invalid email address"
 					type="email"
 					name="email"
 					id="email"
 					placeholder="john.doe@email.com"
-					class="textArea"
 				/>
 
 				<label for="password">Password</label>
-				<input type="password" name="password" id="password" />
+				<input
+					required
+					pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{10,}$"
+					title="Invalid Password"
+					type="password"
+					name="password"
+					id="password"
+					placeholder="SecurePassword1"
+				/>
 
 				<label for="passwordConfirm">Confirm Password</label>
 				<input
+					required
+					pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{10,}$"
+					title="Invalid Password"
 					type="password"
 					name="passwordConfirm"
 					id="passwordConfirm"
-					class="textArea"
+					placeholder="SecurePassword1"
 				/>
+			</section>
+			<section id="requirements">
+				<section id="emailRequirements">
+					<label for="email"> Email Requirements</label>
+					<ul>
+						<li>Must be a valid email address</li>
+					</ul>
+				</section>
+				<label for="password"> Password Requirements </label>
+				<section id="passwordRequirements">
+					<ul>
+						<li>Must be at least ten characters in length.</li>
+						<li>Must contain at least one uppercase character.</li>
+						<li>Must contain one number.</li>
+					</ul>
+				</section>
 			</section>
 			<section id="footer">
 				<input type="submit" value="Create Account" class="btn" />
 				<p>
 					Already have an account?
-					<a href="https://www.theodinproject.com/">Sign in</a>
+					<a href="https://www.theodinproject.com/" class="link">Sign in...</a>
 				</p>
 			</section>
 		</form>
