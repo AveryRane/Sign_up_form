@@ -1,3 +1,6 @@
+const fName = document.querySelector('#fName');
+const lName = document.querySelector('#lName');
+const phone = document.querySelector('#phoneNumber');
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 const confirmPassword = document.querySelector('#passwordConfirm');
@@ -13,20 +16,67 @@ inputs.forEach(input => {
 	});
 });
 
+let accountDetails = {
+	firstName: '',
+	lastName: '',
+	phone: '',
+	email: '',
+	password: '',
+};
+
 creatAccount.addEventListener('click', () => {
+	validatefName();
+	validatelName();
+	validatePhone();
 	validateEmail();
 	validatePassword();
+	console.log(accountDetails);
 });
+
+function validatefName() {
+	let validRegex = /^[a-zA-Z]/;
+
+	if (lName.value.match(validRegex)) {
+		accountDetails.firstName = fName.value;
+		return true;
+	} else {
+		alert('Not valid first name');
+		return false;
+	}
+}
+
+function validatelName() {
+	let validRegex = /^[a-zA-Z]/;
+
+	if (lName.value.match(validRegex)) {
+		accountDetails.lastName = lName.value;
+		return true;
+	} else {
+		alert('Not a valid last name');
+		return false;
+	}
+}
+
+function validatePhone() {
+	let validRegex = /([A-Za-z0-9]+(\.[A-Za-z0-9]+)+)/;
+
+	if (phone.value.match(validRegex)) {
+		accountDetails.phone = phone.value;
+		return true;
+	} else {
+		alert('Not a valid phone number');
+	}
+}
 
 function validateEmail() {
 	let validRegex =
 		/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 	if (email.value.match(validRegex)) {
-		console.log('Valid email address!');
+		accountDetails.email = email.value;
 		return true;
 	} else {
-		console.log('Invalid email address!');
+		alert('Invalid email address!');
 		return false;
 	}
 }
@@ -36,10 +86,10 @@ function validatePassword() {
 		password.value.match(validRegex) &&
 		password.value == confirmPassword.value
 	) {
-		console.log('Valid Password');
+		accountDetails.password = password.value;
 		return true;
 	} else {
-		console.log('Invalid Password');
+		alert('Invalid Password');
 		return false;
 	}
 }
